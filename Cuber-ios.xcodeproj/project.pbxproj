@@ -12,6 +12,13 @@
 		C5CCA2381E43B214004CC5F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5CCA2361E43B214004CC5F8 /* Main.storyboard */; };
 		C5CCA23A1E43B214004CC5F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5CCA2391E43B214004CC5F8 /* Assets.xcassets */; };
 		C5CCA23D1E43B214004CC5F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5CCA23B1E43B214004CC5F8 /* LaunchScreen.storyboard */; };
+		C5CCA2551E43BE6A004CC5F8 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CCA2541E43BE6A004CC5F8 /* Config.swift */; };
+		C5CCA25A1E43BEC7004CC5F8 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5CCA2581E43BEC7004CC5F8 /* Bolts.framework */; };
+		C5CCA25B1E43BEC7004CC5F8 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5CCA2591E43BEC7004CC5F8 /* Parse.framework */; };
+		C5CCA25D1E43BED1004CC5F8 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C5CCA25C1E43BED1004CC5F8 /* libsqlite3.tbd */; };
+		C5CCA25F1E43BED7004CC5F8 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5CCA25E1E43BED7004CC5F8 /* AudioToolbox.framework */; };
+		C5CCA2611E43BEDF004CC5F8 /* libstdc++.6.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C5CCA2601E43BEDF004CC5F8 /* libstdc++.6.tbd */; };
+		C5CCA2631E43BEE6004CC5F8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5CCA2621E43BEE6004CC5F8 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +29,13 @@
 		C5CCA2391E43B214004CC5F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C5CCA23C1E43B214004CC5F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C5CCA23E1E43B214004CC5F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C5CCA2541E43BE6A004CC5F8 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		C5CCA2581E43BEC7004CC5F8 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		C5CCA2591E43BEC7004CC5F8 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		C5CCA25C1E43BED1004CC5F8 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		C5CCA25E1E43BED7004CC5F8 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		C5CCA2601E43BEDF004CC5F8 /* libstdc++.6.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.tbd"; path = "usr/lib/libstdc++.6.tbd"; sourceTree = SDKROOT; };
+		C5CCA2621E43BEE6004CC5F8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +43,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5CCA25A1E43BEC7004CC5F8 /* Bolts.framework in Frameworks */,
+				C5CCA25B1E43BEC7004CC5F8 /* Parse.framework in Frameworks */,
+				C5CCA25F1E43BED7004CC5F8 /* AudioToolbox.framework in Frameworks */,
+				C5CCA2631E43BEE6004CC5F8 /* SystemConfiguration.framework in Frameworks */,
+				C5CCA2611E43BEDF004CC5F8 /* libstdc++.6.tbd in Frameworks */,
+				C5CCA25D1E43BED1004CC5F8 /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +60,7 @@
 			children = (
 				C5CCA2311E43B214004CC5F8 /* Cuber-ios */,
 				C5CCA2301E43B214004CC5F8 /* Products */,
+				C5CCA2571E43BEC6004CC5F8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +75,36 @@
 		C5CCA2311E43B214004CC5F8 /* Cuber-ios */ = {
 			isa = PBXGroup;
 			children = (
+				C5CCA23B1E43B214004CC5F8 /* LaunchScreen.storyboard */,
+				C5CCA2361E43B214004CC5F8 /* Main.storyboard */,
 				C5CCA2321E43B214004CC5F8 /* AppDelegate.swift */,
 				C5CCA2341E43B214004CC5F8 /* ViewController.swift */,
-				C5CCA2361E43B214004CC5F8 /* Main.storyboard */,
-				C5CCA2391E43B214004CC5F8 /* Assets.xcassets */,
-				C5CCA23B1E43B214004CC5F8 /* LaunchScreen.storyboard */,
-				C5CCA23E1E43B214004CC5F8 /* Info.plist */,
+				C5CCA2541E43BE6A004CC5F8 /* Config.swift */,
+				C5CCA2561E43BE70004CC5F8 /* Ressources */,
 			);
 			path = "Cuber-ios";
+			sourceTree = "<group>";
+		};
+		C5CCA2561E43BE70004CC5F8 /* Ressources */ = {
+			isa = PBXGroup;
+			children = (
+				C5CCA2391E43B214004CC5F8 /* Assets.xcassets */,
+				C5CCA23E1E43B214004CC5F8 /* Info.plist */,
+			);
+			name = Ressources;
+			sourceTree = "<group>";
+		};
+		C5CCA2571E43BEC6004CC5F8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C5CCA2621E43BEE6004CC5F8 /* SystemConfiguration.framework */,
+				C5CCA2601E43BEDF004CC5F8 /* libstdc++.6.tbd */,
+				C5CCA25E1E43BED7004CC5F8 /* AudioToolbox.framework */,
+				C5CCA25C1E43BED1004CC5F8 /* libsqlite3.tbd */,
+				C5CCA2581E43BEC7004CC5F8 /* Bolts.framework */,
+				C5CCA2591E43BEC7004CC5F8 /* Parse.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +182,7 @@
 			files = (
 				C5CCA2351E43B214004CC5F8 /* ViewController.swift in Sources */,
 				C5CCA2331E43B214004CC5F8 /* AppDelegate.swift in Sources */,
+				C5CCA2551E43BE6A004CC5F8 /* Config.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +304,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = WBEHWU37QN;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Cuber-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zonepourpre.Cuber-ios";
@@ -273,6 +321,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = WBEHWU37QN;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Cuber-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zonepourpre.Cuber-ios";
@@ -300,6 +352,7 @@
 				C5CCA2431E43B214004CC5F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
