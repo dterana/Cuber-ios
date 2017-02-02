@@ -1,14 +1,24 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Arkhip_font.ttf">
+            <string>Arkhip</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Cuber_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +26,136 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.45000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="ZRt-yW-oii">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cUBER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9wN-ny-PkN">
+                                <rect key="frame" x="89.5" y="50" width="196" height="60"/>
+                                <fontDescription key="fontDescription" name="Arkhip" family="Arkhip" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Vc4-Pm-aI6">
+                                <rect key="frame" x="16" y="296" width="343" height="75"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="cuberdriver@test.com" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QCd-Hz-1Ye">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" keyboardAppearance="alert"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="password" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="edz-j1-Rzk">
+                                        <rect key="frame" x="0.0" y="45" width="343" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" secureTextEntry="YES"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="edz-j1-Rzk" secondAttribute="trailing" id="GIT-ZC-Fp3"/>
+                                    <constraint firstAttribute="height" constant="75" id="LMy-m2-tWZ"/>
+                                    <constraint firstItem="edz-j1-Rzk" firstAttribute="leading" secondItem="Vc4-Pm-aI6" secondAttribute="leading" id="hA1-SK-FI8"/>
+                                    <constraint firstItem="QCd-Hz-1Ye" firstAttribute="leading" secondItem="Vc4-Pm-aI6" secondAttribute="leading" id="pUT-zj-fRd"/>
+                                    <constraint firstAttribute="trailing" secondItem="QCd-Hz-1Ye" secondAttribute="trailing" id="vzB-OH-dbS"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="kxh-y2-RL0">
+                                <rect key="frame" x="82.5" y="236" width="210" height="35"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rider" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0oX-cs-Chy">
+                                        <rect key="frame" x="0.0" y="0.0" width="70" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="1QP-th-5jj"/>
+                                            <constraint firstAttribute="width" constant="70" id="yKy-WR-G6y"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Arkhip" family="Arkhip" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="neF-bd-xvQ">
+                                        <rect key="frame" x="80.5" y="0.0" width="51" height="35"/>
+                                        <color key="onTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </switch>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Driver" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tsh-qa-YXV">
+                                        <rect key="frame" x="140" y="0.0" width="70" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="H7T-oA-J0S"/>
+                                            <constraint firstAttribute="width" constant="70" id="y5N-oH-bCT"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Arkhip" family="Arkhip" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="210" id="tji-Pb-pi3"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AGE-ch-Tjf">
+                                <rect key="frame" x="142.5" y="396" width="90" height="35"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="LuM-aS-Nhh"/>
+                                    <constraint firstAttribute="height" constant="35" id="qRW-Q5-LTf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Arkhip" family="Arkhip" pointSize="19"/>
+                                <state key="normal" title="Log In">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="signupOrLoginBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hmx-rV-wVi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3OA-AI-MQ9">
+                                <rect key="frame" x="77.5" y="612" width="220" height="35"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="220" id="aWx-qu-bgX"/>
+                                    <constraint firstAttribute="height" constant="35" id="eqz-lN-cPl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Arkhip" family="Arkhip" pointSize="14"/>
+                                <state key="normal" title="Don't have an account?">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeSignUpModeBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sde-ab-dCg"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ZRt-yW-oii" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="927-en-bIV"/>
+                            <constraint firstItem="AGE-ch-Tjf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9e6-dG-FCl"/>
+                            <constraint firstAttribute="trailing" secondItem="ZRt-yW-oii" secondAttribute="trailing" id="AVK-7W-Oiw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Vc4-Pm-aI6" secondAttribute="trailing" id="OuQ-Z5-fOR"/>
+                            <constraint firstItem="AGE-ch-Tjf" firstAttribute="top" secondItem="Vc4-Pm-aI6" secondAttribute="bottom" constant="25" id="Pdw-ZT-Piy"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3OA-AI-MQ9" secondAttribute="bottom" constant="20" id="Tjw-KQ-FyY"/>
+                            <constraint firstItem="ZRt-yW-oii" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="VLp-1E-CPO"/>
+                            <constraint firstItem="9wN-ny-PkN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aUe-Ic-Wh2"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ZRt-yW-oii" secondAttribute="bottom" id="b5x-dN-8nw"/>
+                            <constraint firstItem="3OA-AI-MQ9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mXd-Zs-47S"/>
+                            <constraint firstItem="9wN-ny-PkN" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="mZ7-rI-GW7"/>
+                            <constraint firstItem="Vc4-Pm-aI6" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="qcH-Ud-JsJ"/>
+                            <constraint firstItem="Vc4-Pm-aI6" firstAttribute="top" secondItem="kxh-y2-RL0" secondAttribute="bottom" constant="25" id="tBO-Xc-3Nn"/>
+                            <constraint firstItem="Vc4-Pm-aI6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="vAo-Pv-y9K"/>
+                            <constraint firstItem="kxh-y2-RL0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xFk-vq-Roh"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="changeSignUpModeLbl" destination="3OA-AI-MQ9" id="b6d-M4-q8W"/>
+                        <outlet property="emailTextField" destination="QCd-Hz-1Ye" id="Xgw-fV-vL3"/>
+                        <outlet property="isDriverSwitch" destination="neF-bd-xvQ" id="Gcg-2y-16U"/>
+                        <outlet property="passwordTextField" destination="edz-j1-Rzk" id="Y7T-9j-Sgg"/>
+                        <outlet property="signupOrLoginLbl" destination="AGE-ch-Tjf" id="uWc-0F-5EB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="24.800000000000001" y="35.532233883058474"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background" width="3583" height="5374"/>
+    </resources>
 </document>
