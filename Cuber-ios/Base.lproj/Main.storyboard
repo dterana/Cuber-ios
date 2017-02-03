@@ -31,7 +31,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cUBER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9wN-ny-PkN">
-                                <rect key="frame" x="89.5" y="50" width="196" height="60"/>
+                                <rect key="frame" x="87.5" y="50" width="200" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="7fc-Mx-2N2"/>
+                                    <constraint firstAttribute="height" constant="60" id="xIL-aK-Eug"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Arkhip" family="Arkhip" pointSize="50"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -39,7 +43,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Vc4-Pm-aI6">
                                 <rect key="frame" x="16" y="296" width="343" height="75"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="cuberdriver@test.com" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QCd-Hz-1Ye">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="cuberrider@test.com" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QCd-Hz-1Ye">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -60,7 +64,7 @@
                                     <constraint firstAttribute="trailing" secondItem="QCd-Hz-1Ye" secondAttribute="trailing" id="vzB-OH-dbS"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="kxh-y2-RL0">
+                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="kxh-y2-RL0">
                                 <rect key="frame" x="82.5" y="236" width="210" height="35"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rider" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0oX-cs-Chy">
@@ -147,12 +151,101 @@
                         <outlet property="emailTextField" destination="QCd-Hz-1Ye" id="Xgw-fV-vL3"/>
                         <outlet property="isDriverSwitch" destination="neF-bd-xvQ" id="Gcg-2y-16U"/>
                         <outlet property="passwordTextField" destination="edz-j1-Rzk" id="Y7T-9j-Sgg"/>
+                        <outlet property="riderSwitchDriverStack" destination="kxh-y2-RL0" id="yEP-BJ-wKX"/>
                         <outlet property="signupOrLoginLbl" destination="AGE-ch-Tjf" id="uWc-0F-5EB"/>
+                        <segue destination="6UH-cv-XUG" kind="show" identifier="showRiderVCSegue" id="226-BB-qAd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="24.800000000000001" y="35.532233883058474"/>
+        </scene>
+        <!--Rider View Controller-->
+        <scene sceneID="J5R-wQ-hIM">
+            <objects>
+                <viewController id="6UH-cv-XUG" customClass="RiderViewController" customModule="Cuber_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LLW-ec-4DM"/>
+                        <viewControllerLayoutGuide type="bottom" id="4c0-SL-ft5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PG5-xN-rUv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.45000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="fGD-vW-D3A">
+                                <rect key="frame" x="-6" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="hcc-sZ-ogr">
+                                <rect key="frame" x="16" y="70" width="343" height="478"/>
+                            </mapView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i1i-1z-Man">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="bjr-mQ-Bv9"/>
+                                </constraints>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" name="Arkhip" family="Arkhip" pointSize="18"/>
+                                    <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="cUBER" id="NGk-A4-cph"/>
+                                </items>
+                            </navigationBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NUh-IC-pcK">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="WuB-CF-GGh"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="Logout" id="pfW-LM-xON">
+                                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" identifier="logoutSegue" id="gIA-ro-Vzt"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qea-3t-9eR">
+                                <rect key="frame" x="112" y="568" width="150" height="35"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="Jy3-v3-fai"/>
+                                    <constraint firstAttribute="width" constant="150" id="haB-BT-3UF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Arkhip" family="Arkhip" pointSize="18"/>
+                                <state key="normal" title="Call a cUBER">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="callACuberBtn:" destination="6UH-cv-XUG" eventType="touchUpInside" id="HrB-0z-uVa"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NUh-IC-pcK" firstAttribute="leading" secondItem="PG5-xN-rUv" secondAttribute="leading" id="2Uf-UG-GhK"/>
+                            <constraint firstItem="hcc-sZ-ogr" firstAttribute="leading" secondItem="PG5-xN-rUv" secondAttribute="leadingMargin" id="9On-uh-MRt"/>
+                            <constraint firstItem="i1i-1z-Man" firstAttribute="leading" secondItem="PG5-xN-rUv" secondAttribute="leading" id="EOm-M6-s1w"/>
+                            <constraint firstItem="i1i-1z-Man" firstAttribute="top" secondItem="PG5-xN-rUv" secondAttribute="top" id="SSr-vE-Roq"/>
+                            <constraint firstItem="hcc-sZ-ogr" firstAttribute="trailing" secondItem="PG5-xN-rUv" secondAttribute="trailingMargin" id="Sza-Tv-aES"/>
+                            <constraint firstAttribute="trailing" secondItem="NUh-IC-pcK" secondAttribute="trailing" id="ZQc-Ch-KxF"/>
+                            <constraint firstItem="hcc-sZ-ogr" firstAttribute="top" secondItem="i1i-1z-Man" secondAttribute="bottom" constant="20" id="cPV-31-l7E"/>
+                            <constraint firstItem="qea-3t-9eR" firstAttribute="top" secondItem="hcc-sZ-ogr" secondAttribute="bottom" constant="20" id="ctc-tn-Wad"/>
+                            <constraint firstItem="qea-3t-9eR" firstAttribute="centerX" secondItem="PG5-xN-rUv" secondAttribute="centerX" id="dIS-pg-rD3"/>
+                            <constraint firstAttribute="trailing" secondItem="i1i-1z-Man" secondAttribute="trailing" id="ta9-Zj-ncJ"/>
+                            <constraint firstItem="4c0-SL-ft5" firstAttribute="top" secondItem="NUh-IC-pcK" secondAttribute="bottom" id="vHP-zL-vj6"/>
+                            <constraint firstItem="NUh-IC-pcK" firstAttribute="top" secondItem="qea-3t-9eR" secondAttribute="bottom" constant="20" id="zhj-Uo-OR6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="callACuberLbl" destination="qea-3t-9eR" id="1rS-Vt-hmV"/>
+                        <outlet property="map" destination="hcc-sZ-ogr" id="5rt-jJ-bFj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T01-YY-Bgw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="924" y="35.532233883058474"/>
         </scene>
     </scenes>
     <resources>

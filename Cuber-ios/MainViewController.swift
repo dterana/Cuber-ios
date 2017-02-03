@@ -18,6 +18,19 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     
     var signupMode = false
     
+    
+    //--------------------------------------
+    //MARK: - IBOutlet declaration
+    //--------------------------------------
+    
+    @IBOutlet weak var riderSwitchDriverStack: UIStackView!
+    @IBOutlet weak var isDriverSwitch: UISwitch!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var signupOrLoginLbl: UIButton!
+    @IBOutlet weak var changeSignUpModeLbl: UIButton!
+    
+    
     //--------------------------------------
     //MARK: - Function declaration
     //--------------------------------------
@@ -30,16 +43,6 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         self.present(alertController, animated: true, completion: nil)
         
     }
-    
-    //--------------------------------------
-    //MARK: - IBOutlet declaration
-    //--------------------------------------
-    
-    @IBOutlet weak var isDriverSwitch: UISwitch!
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var signupOrLoginLbl: UIButton!
-    @IBOutlet weak var changeSignUpModeLbl: UIButton!
     
     
     //--------------------------------------
@@ -82,8 +85,17 @@ class MainViewController: UIViewController, UITextFieldDelegate {
                         
                         print("Sign Up Successful")
                         
+                        if let isDriver = PFUser.current()?["isDriver"] as? Bool {
+                            
+                            if isDriver {
+                                
+                            } else {
+                                
+                                self.performSegue(withIdentifier: "showRiderVCSegue", sender: self)
+                                
+                            }
+                        }
                     }
-                    
                 })
             } else {
                 
@@ -105,11 +117,19 @@ class MainViewController: UIViewController, UITextFieldDelegate {
                         
                         print("Log In Successful")
                         
+                        if let isDriver = PFUser.current()?["isDriver"] as? Bool {
+                            
+                            if isDriver {
+                                
+                            } else {
+                                
+                                self.performSegue(withIdentifier: "showRiderVCSegue", sender: self)
+                                
+                            }
+                        }
                     }
-
                 })
             }
-            
         }
     }
     
@@ -117,12 +137,15 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         
         if signupMode {
             
+            riderSwitchDriverStack.isHidden = true
             signupOrLoginLbl.setTitle("Log In", for: [])
             changeSignUpModeLbl.setTitle("Don't have an account?", for: [])
             signupMode = false
             
+            
         } else {
             
+            riderSwitchDriverStack.isHidden = false
             signupOrLoginLbl.setTitle("Sign Up", for: [])
             changeSignUpModeLbl.setTitle("Already have an account?", for: [])
             signupMode = true
@@ -147,6 +170,20 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         
         return textField.resignFirstResponder()
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        if let isDriver = PFUser.current()?["isDriver"] as? Bool {
+            
+            if isDriver {
+                
+            } else {
+                
+                performSegue(withIdentifier: "showRiderVCSegue", sender: self)
+                
+            }
+        }
     }
     
     override func viewDidLoad() {

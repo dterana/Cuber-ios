@@ -20,6 +20,7 @@
 		C5CCA2611E43BEDF004CC5F8 /* libstdc++.6.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C5CCA2601E43BEDF004CC5F8 /* libstdc++.6.tbd */; };
 		C5CCA2631E43BEE6004CC5F8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5CCA2621E43BEE6004CC5F8 /* SystemConfiguration.framework */; };
 		C5CCA2651E43C4A5004CC5F8 /* Arkhip_font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C5CCA2641E43C4A5004CC5F8 /* Arkhip_font.ttf */; };
+		C5CCA2671E43DF66004CC5F8 /* RiderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CCA2661E43DF66004CC5F8 /* RiderViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		C5CCA2601E43BEDF004CC5F8 /* libstdc++.6.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.tbd"; path = "usr/lib/libstdc++.6.tbd"; sourceTree = SDKROOT; };
 		C5CCA2621E43BEE6004CC5F8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		C5CCA2641E43C4A5004CC5F8 /* Arkhip_font.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Arkhip_font.ttf; sourceTree = "<group>"; };
+		C5CCA2661E43DF66004CC5F8 /* RiderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RiderViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				C5CCA2361E43B214004CC5F8 /* Main.storyboard */,
 				C5CCA2321E43B214004CC5F8 /* AppDelegate.swift */,
 				C5CCA2341E43B214004CC5F8 /* MainViewController.swift */,
+				C5CCA2661E43DF66004CC5F8 /* RiderViewController.swift */,
 				C5CCA2541E43BE6A004CC5F8 /* Config.swift */,
 				C5CCA2561E43BE70004CC5F8 /* Ressources */,
 			);
@@ -185,6 +188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5CCA2351E43B214004CC5F8 /* MainViewController.swift in Sources */,
+				C5CCA2671E43DF66004CC5F8 /* RiderViewController.swift in Sources */,
 				C5CCA2331E43B214004CC5F8 /* AppDelegate.swift in Sources */,
 				C5CCA2551E43BE6A004CC5F8 /* Config.swift in Sources */,
 			);
