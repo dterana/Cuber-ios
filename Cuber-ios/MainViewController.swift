@@ -89,6 +89,8 @@ class MainViewController: UIViewController, UITextFieldDelegate {
                             
                             if isDriver {
                                 
+                                self.performSegue(withIdentifier: "showDriverVCSegue", sender: self)
+                                
                             } else {
                                 
                                 self.performSegue(withIdentifier: "showRiderVCSegue", sender: self)
@@ -120,6 +122,8 @@ class MainViewController: UIViewController, UITextFieldDelegate {
                         if let isDriver = PFUser.current()?["isDriver"] as? Bool {
                             
                             if isDriver {
+                                
+                                self.performSegue(withIdentifier: "showDriverVCSegue", sender: self)
                                 
                             } else {
                                 
@@ -177,6 +181,8 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         if let isDriver = PFUser.current()?["isDriver"] as? Bool {
             
             if isDriver {
+                
+                self.performSegue(withIdentifier: "showDriverVCSegue", sender: self)
                 
             } else {
                 
