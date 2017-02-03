@@ -7,8 +7,8 @@
 //
 
 import UIKit
-import Parse
 import MapKit
+import Parse
 
 class RiderViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
@@ -206,7 +206,7 @@ class RiderViewController: UIViewController, MKMapViewDelegate, CLLocationManage
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "logoutSegue" {
+        if segue.identifier == "riderLogoutSegue" {
         
             locationManeger.stopUpdatingLocation()
             PFUser.logOut()
