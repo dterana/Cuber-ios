@@ -186,9 +186,11 @@ class RiderViewController: UIViewController, MKMapViewDelegate, CLLocationManage
             
             if let riderRequests = objects {
                 
-                self.riderRequestActive = true
-                self.callACuberLbl.setTitle("Cancel", for: [])
-                
+                if riderRequests.count > 0 {
+                    
+                    self.riderRequestActive = true
+                    self.callACuberLbl.setTitle("Cancel", for: [])
+                }
             }
             
             self.callACuberLbl.isHidden = false
@@ -206,6 +208,7 @@ class RiderViewController: UIViewController, MKMapViewDelegate, CLLocationManage
         
         if segue.identifier == "logoutSegue" {
         
+            locationManeger.stopUpdatingLocation()
             PFUser.logOut()
             
         }
