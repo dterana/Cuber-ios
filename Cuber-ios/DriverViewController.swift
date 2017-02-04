@@ -69,6 +69,40 @@ class DriverViewController: UIViewController, UITableViewDelegate, UITableViewDa
             
             userLocation = location
             
+            let driverLocationQuery = PFQuery(className: "DriverLocation")
+            
+            driverLocationQuery.whereKey("username", equalTo: (PFUser.current()?.username)!)
+            
+            driverLocationQuery.findObjectsInBackground(block: { (objects, error) in
+                
+                if let driverLocations = objects {
+                    
+                    if driverLocations.count > 0 {
+                        
+                        for driverLocation in driverLocations {
+                            
+                            driverLocation["driverLocation"] = PFGeoPoint(latitude: self.userLocation.latitude, longitude: self.userLocation.longitude)
+                            
+                            driverLocation.deleteInBackground()
+                        }
+                   
+                    }
+                    
+                }
+                
+                let driverLocation = PFObject(className: "DriverLocation")
+                
+                driverLocation["username"] = PFUser.current()?.username
+                
+                driverLocation["location"] = PFGeoPoint(latitude: self.userLocation.latitude, longitude: self.userLocation.longitude)
+                
+                driverLocation.saveInBackground()
+
+                
+            })
+            
+            
+            
             let query1 = PFQuery(className: "RiderRequest")
             query1.whereKeyDoesNotExist("driverResponded")
             
